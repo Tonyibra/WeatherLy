@@ -1,0 +1,23 @@
+
+$BorderColor :#b3b3b3;
+.tableContainer{
+    padding-top: 16px;
+    .col{
+        display: flex;
+        flex-direction: column;
+        .row{
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+            border-bottom: 1px solid $BorderColor;
+            &:last-child{
+                border-bottom: 0px;
+            }
+            span{
+                font-size: 20px;
+                padding: 12px 8px;
+                line-height: 24px;
+            }
+        }
+    }
+}

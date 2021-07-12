@@ -5,17 +5,40 @@ $primaryColor : #0e0e0e;
     height: 88px;
     font-family: $primaryFontFamily;
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     .navContent{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        
         .logo{
             padding-bottom: 16px;
             span{
                 font-size: 1.875em;
                 color: $primaryColor;
+                cursor: pointer;
                 
             }
+        }
+        .tempUnits{
+            display: flex;
+            align-items: center;
+        
+            img{
+                width: 33px;
+                height: 33px;
+                margin: 8px;
+                object-fit: contain;
+                &:hover{
+                    cursor: pointer;
+                    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+                }
+                
+            }
+            
+            
         }
     }
 }

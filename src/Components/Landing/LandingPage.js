@@ -6,11 +6,7 @@ const LandingPage = () => {
     <div className={styles.landingContainer}>
       {/* Header */}
       <AppBar />
-      <main>
-        <div className={styles.mainTitle}>
-          Weather <span>Forecast</span>
-        </div>
-      </main>
+      <main></main>
     </div>
   );
 };
