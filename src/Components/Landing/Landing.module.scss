@@ -1,0 +1,22 @@
+
+$primaryFontFamily :  DM Sans, sans-serif;
+$primaryColor : #0e0e0e;
+.landingContainer{
+    display: flex;
+    flex-direction: column;
+    font-family: $primaryFontFamily;
+    padding: 24px 40px;
+    
+    .mainTitle{
+        padding-top: 16px;
+        font-size: 70px;
+        line-height: 70px;
+        span{
+            font-size: 80px;
+            line-height: 80px;
+            text-decoration: underline;
+            color: #0f0f0f;
+            font-weight: 700;
+        }
+    }
+}

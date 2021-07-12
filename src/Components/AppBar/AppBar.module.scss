@@ -1,0 +1,21 @@
+$primaryFontFamily :  DM Sans, sans-serif;
+$primaryColor : #0e0e0e;
+
+.navContainer{
+    height: 88px;
+    font-family: $primaryFontFamily;
+    display: flex;
+    .navContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .logo{
+            padding-bottom: 16px;
+            span{
+                font-size: 1.875em;
+                color: $primaryColor;
+                
+            }
+        }
+    }
+}
