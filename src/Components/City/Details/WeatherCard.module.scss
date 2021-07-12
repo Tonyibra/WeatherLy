@@ -21,10 +21,18 @@ $primaryColor : #0e0e0e;
        
     }
     .temp{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         span{
             font-size: 64px;
             line-height: 64px;
         }
         padding-bottom: 8px;
+
+        .reelFeel{
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 }
