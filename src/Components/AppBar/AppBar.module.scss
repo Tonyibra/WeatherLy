@@ -24,7 +24,7 @@ $primaryColor : #0e0e0e;
         .tempUnits{
             display: flex;
             align-items: center;
-            
+        
             img{
                 width: 33px;
                 height: 33px;
@@ -32,8 +32,12 @@ $primaryColor : #0e0e0e;
                 object-fit: contain;
                 &:hover{
                     cursor: pointer;
+                    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
                 }
+                
             }
+            
+            
         }
     }
 }

@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./SearchBox.module.scss";
 import searchIcon from "../base/SearchBoxIcons/search.svg";
 import Box from "@material-ui/core/Box";
 import InputBase from "@material-ui/core/InputBase";
 import { makeStyles } from "@material-ui/core/styles";
 import { search } from "../../Redux/slices/SearchSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 const Search = makeStyles({
   root: {
     border: "1px solid #0e0e0e",
@@ -18,29 +19,38 @@ const Search = makeStyles({
 });
 
 const SearchBox = ({ placebolder }) => {
-  const mainCity = "Beirut";
+  //router
+  const router = useRouter();
   const dispatch = useDispatch();
-  //HOOKS
-  const [searchString, setSearchString] = React.useState(mainCity);
+  const searchData = useSelector((state) => state.search.SearchedCountry);
+  const cityId = useSelector((state) => state.search.SearchedCountry.name);
+
+  const [searchString, setSearchString] = React.useState();
+
   //FUNCTIONS
   const getSearchString = (value) => {
     setSearchString(value);
   };
 
-  React.useEffect(async () => {
-    const firstSearch = await dispatch(search(searchString));
-  }, []);
   const getCountryDataHandler = async () => {
-    const searchAction = await dispatch(search(searchString));
+    await dispatch(search(searchString));
   };
+  const goToCityHandler = async () => {
+    await dispatch(search(searchString));
+  };
+  useEffect(() => {
+    if (Object.keys(searchData).length > 0) {
+      router.push(`/City/${cityId}`);
+    }
+  }, [searchData]);
   const classes = Search();
   return (
     <div className={styles.searchContainer}>
       <Box className={classes.root}>
-        <img src={searchIcon} onClick={getCountryDataHandler} />
+        <img src={searchIcon} onClick={goToCityHandler} />
         <InputBase
           placeholder={placebolder}
-          onChange={(e) => getSearchString(e.target.value)}
+          onChange={(e) => setSearchString(e.target.value)}
         />
       </Box>
     </div>

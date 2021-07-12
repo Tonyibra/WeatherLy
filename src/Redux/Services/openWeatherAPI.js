@@ -8,7 +8,7 @@ openWeatherAPI.getCountrybyCountryName = async (
 ) => {
   const endpoint = `//api.openweathermap.org/data/2.5/weather?q=${searchString}&units=${unit}&appid=fe59f54d9745f8b87580dcc5b70f2ed0`;
   try {
-    const response = await axios.get(`${endpoint}`, {});
+    const response = await axios.get(`${endpoint}`);
     if (response.data) {
       return [null, response.data];
     } else {
@@ -18,4 +18,5 @@ openWeatherAPI.getCountrybyCountryName = async (
     return [{ message: "Error when fetching properties" }, null];
   }
 };
+
 export default openWeatherAPI;

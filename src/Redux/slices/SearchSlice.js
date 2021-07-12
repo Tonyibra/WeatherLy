@@ -20,9 +20,7 @@ export const SearchSlice = createSlice({
     },
   },
 });
-
 export const { searched, searchComplete } = SearchSlice.actions;
-
 export const search = (searchString, unit) => async (dispatch) => {
   try {
     const results = await openWeatherAPI.getCountrybyCountryName(
