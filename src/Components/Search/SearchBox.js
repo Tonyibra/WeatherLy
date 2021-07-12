@@ -25,7 +25,7 @@ const SearchBox = ({ placebolder }) => {
   const searchData = useSelector((state) => state.search.SearchedCountry);
   const cityId = useSelector((state) => state.search.SearchedCountry.name);
 
-  const [searchString, setSearchString] = React.useState();
+  const [searchString, setSearchString] = React.useState("");
 
   //FUNCTIONS
   const getSearchString = (value) => {
@@ -37,17 +37,18 @@ const SearchBox = ({ placebolder }) => {
   };
   const goToCityHandler = async () => {
     await dispatch(search(searchString));
-  };
-  useEffect(() => {
     if (Object.keys(searchData).length > 0) {
       router.push(`/City/${cityId}`);
     }
-  }, [searchData]);
+  };
   const classes = Search();
   return (
     <div className={styles.searchContainer}>
       <Box className={classes.root}>
-        <img src={searchIcon} onClick={goToCityHandler} />
+        <img
+          src={searchIcon}
+          onClick={searchString !== "" ? goToCityHandler : null}
+        />
         <InputBase
           placeholder={placebolder}
           onChange={(e) => setSearchString(e.target.value)}

@@ -16,7 +16,7 @@ const AppBar = ({ unitChanged, setUnitChanged }) => {
     setUnitChanged(!unitChanged);
   };
 
-  console.log(tempUnit);
+  console.log(router.asPath);
   const mainPageHandler = () => {
     router.push("/");
   };
@@ -29,17 +29,22 @@ const AppBar = ({ unitChanged, setUnitChanged }) => {
         <div className={styles.serarchContainer}>
           <SearchBox />
         </div>
-        <div className={styles.tempUnits}>
-          <div className={styles.celcuis}>
-            <img src={Celcuis} onClick={() => changeTempUnitHandler(celcuis)} />
+        {router.asPath !== "/" && (
+          <div className={styles.tempUnits}>
+            <div className={styles.celcuis}>
+              <img
+                src={Celcuis}
+                onClick={() => changeTempUnitHandler(celcuis)}
+              />
+            </div>
+            <div className={styles.fahrenhite}>
+              <img
+                src={Fahrenheit}
+                onClick={() => changeTempUnitHandler(fahrenheit)}
+              />
+            </div>
           </div>
-          <div className={styles.fahrenhite}>
-            <img
-              src={Fahrenheit}
-              onClick={() => changeTempUnitHandler(fahrenheit)}
-            />
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
