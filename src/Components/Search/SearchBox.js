@@ -10,7 +10,7 @@ const Search = makeStyles({
   root: {
     border: "1px solid #0e0e0e",
     borderRadius: "16px",
-    width: "240px",
+    width: "380px",
     padding: "4px 8px",
     display: "flex",
     alignItems: "center",
@@ -18,14 +18,18 @@ const Search = makeStyles({
 });
 
 const SearchBox = ({ placebolder }) => {
+  const mainCity = "Beirut";
   const dispatch = useDispatch();
   //HOOKS
-  const [searchString, setSearchString] = React.useState();
+  const [searchString, setSearchString] = React.useState(mainCity);
   //FUNCTIONS
   const getSearchString = (value) => {
     setSearchString(value);
   };
 
+  React.useEffect(async () => {
+    const firstSearch = await dispatch(search(searchString));
+  }, []);
   const getCountryDataHandler = async () => {
     const searchAction = await dispatch(search(searchString));
   };

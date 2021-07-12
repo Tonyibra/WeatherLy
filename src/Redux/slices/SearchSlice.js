@@ -21,12 +21,15 @@ export const SearchSlice = createSlice({
   },
 });
 
-export const { searched } = SearchSlice.actions;
+export const { searched, searchComplete } = SearchSlice.actions;
 
-export const search = (searchString) => async (dispatch) => {
+export const search = (searchString, unit) => async (dispatch) => {
   try {
-    const results = await openWeatherAPI.getCountrybyCountryName(searchString);
-    dispatch(searchComplete(results));
+    const results = await openWeatherAPI.getCountrybyCountryName(
+      searchString,
+      unit
+    );
+    dispatch(searchComplete(results[1]));
   } catch (error) {
     return [error];
   }
