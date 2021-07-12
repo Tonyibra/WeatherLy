@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { searchByCityName } from "../../Redux/slices/weatherSlice";
+import WeatherCard from "../../Components/City/Details/WeatherCard";
+import styles from "./City.module.scss";
 const City = ({ city }) => {
   const router = useRouter();
   const id = router.query.id;
@@ -22,17 +24,18 @@ const City = ({ city }) => {
   const cityName = cityData.name;
   const countryName = cityData.sys?.country;
   return (
-    <>
-      <div>
-        {Object.keys(cityData).length > 0 && (
-          <Head>
-            <title>{`Weather | ${cityName},${countryName} Weather `}</title>
-          </Head>
-        )}
-        <AppBar />
-        <NavTab />
+    <div className={styles.cityPage}>
+      {Object.keys(cityData).length > 0 && (
+        <Head>
+          <title>{`Weather | ${cityName},${countryName} Weather `}</title>
+        </Head>
+      )}
+      <AppBar />
+      <NavTab />
+      <div className={styles.weatherContainer}>
+        <WeatherCard cityData={cityData} />
       </div>
-    </>
+    </div>
   );
 };
 

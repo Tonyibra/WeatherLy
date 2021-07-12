@@ -1,0 +1,29 @@
+$primaryFontFamily :  DM Sans, sans-serif;
+$primaryColor : #0e0e0e;
+.weatherCard{
+    display: flex;
+    flex-direction: column;
+    font-family: $primaryFontFamily;
+    color: $primaryColor;
+    padding: 24px 48px;
+    background: #fff;
+    width: 540px;
+    .cardHeader{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span{
+            font-size: 28px;
+            line-height: 32px;
+            
+        }
+        padding-bottom: 32px;
+       
+    }
+    .temp{
+        span{
+            font-size: 64px;
+            line-height: 64px;
+        }
+    }
+}
