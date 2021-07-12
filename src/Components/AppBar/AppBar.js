@@ -4,15 +4,19 @@ import styles from "./AppBar.module.scss";
 import Celcuis from "../base/weatherUnitsIcons/celsius.svg";
 import Fahrenheit from "../base/weatherUnitsIcons/fahrenheit-degrees.svg";
 import { useRouter } from "next/router";
-const AppBar = () => {
+const AppBar = ({ unitChanged, setUnitChanged }) => {
   const router = useRouter();
-  const fahrenheit = "F";
-  const celcuis = "C";
-  const [tempUnit, setTempUnit] = useState("C");
+  const fahrenheit = "fahrenheit";
+  const celcuis = "celsius";
+  const [tempUnit, setTempUnit] = useState("celsius");
 
   const changeTempUnitHandler = (unit) => {
+    localStorage.setItem("temp", unit);
     setTempUnit(unit);
+    setUnitChanged(!unitChanged);
   };
+
+  console.log(tempUnit);
   const mainPageHandler = () => {
     router.push("/");
   };
@@ -27,7 +31,7 @@ const AppBar = () => {
         </div>
         <div className={styles.tempUnits}>
           <div className={styles.celcuis}>
-            <img src={Celcuis} onClick={() => changeTempUnitHandler(Celcuis)} />
+            <img src={Celcuis} onClick={() => changeTempUnitHandler(celcuis)} />
           </div>
           <div className={styles.fahrenhite}>
             <img

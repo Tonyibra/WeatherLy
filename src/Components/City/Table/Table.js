@@ -1,7 +1,7 @@
 import { style } from "@material-ui/system";
 import React from "react";
 import styles from "./Table.module.scss";
-const Table = ({ cityData, tempMax }) => {
+const Table = ({ cityData, tempMax, unit }) => {
   const windSpeed = cityData.wind?.speed;
   const humidity = cityData.main?.humidity / 100;
   const Visibility = cityData?.visibility / 1000;
@@ -19,7 +19,7 @@ const Table = ({ cityData, tempMax }) => {
   });
   const units = new Intl.NumberFormat("en", {
     style: "unit",
-    unit: "celsius",
+    unit: unit,
   });
   const percentage = new Intl.NumberFormat("en", {
     style: "percent",
@@ -56,6 +56,11 @@ const Table = ({ cityData, tempMax }) => {
     return formattedTime;
   };
 
+  const convertToFeh = (getTemp) => {
+    const cToFahr = (getTemp * 9) / 5 + 32;
+    return cToFahr;
+  };
+
   return (
     <div className={styles.tableContainer}>
       <div className={styles.col}>
@@ -65,7 +70,11 @@ const Table = ({ cityData, tempMax }) => {
         </div>
         <div className={styles.row}>
           <span>Temp Max</span>
-          <span>{units.format(tempMax)}</span>
+          <span>
+            {unit !== "fahrenheit"
+              ? units.format(tempMax)
+              : units.format(convertToFeh(tempMax))}
+          </span>
         </div>
         <div className={styles.row}>
           <span>Humidity</span>

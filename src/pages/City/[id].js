@@ -8,6 +8,7 @@ import { searchByCityName } from "../../Redux/slices/weatherSlice";
 import WeatherCard from "../../Components/City/Details/WeatherCard";
 import styles from "./City.module.scss";
 const City = ({ city }) => {
+  const [unitChanged, setUnitChanged] = React.useState(false);
   const router = useRouter();
   const id = router.query.id;
   const dispatch = useDispatch();
@@ -30,10 +31,10 @@ const City = ({ city }) => {
           <title>{`Weather | ${cityName},${countryName} Weather `}</title>
         </Head>
       )}
-      <AppBar />
+      <AppBar setUnitChanged={setUnitChanged} unitChanged={unitChanged} />
       <NavTab />
       <div className={styles.weatherContainer}>
-        <WeatherCard cityData={cityData} />
+        <WeatherCard cityData={cityData} unitChanged={unitChanged} />
       </div>
     </div>
   );
