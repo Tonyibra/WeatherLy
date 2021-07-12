@@ -4,7 +4,8 @@ import searchIcon from "../base/SearchBoxIcons/search.svg";
 import Box from "@material-ui/core/Box";
 import InputBase from "@material-ui/core/InputBase";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { search } from "../../Redux/slices/SearchSlice";
+import { useDispatch } from "react-redux";
 const Search = makeStyles({
   root: {
     border: "1px solid #0e0e0e",
@@ -17,12 +18,26 @@ const Search = makeStyles({
 });
 
 const SearchBox = ({ placebolder }) => {
+  const dispatch = useDispatch();
+  //HOOKS
+  const [searchString, setSearchString] = React.useState();
+  //FUNCTIONS
+  const getSearchString = (value) => {
+    setSearchString(value);
+  };
+
+  const getCountryDataHandler = async () => {
+    const searchAction = await dispatch(search(searchString));
+  };
   const classes = Search();
   return (
     <div className={styles.searchContainer}>
       <Box className={classes.root}>
-        <img src={searchIcon} />
-        <InputBase placeholder={placebolder} />
+        <img src={searchIcon} onClick={getCountryDataHandler} />
+        <InputBase
+          placeholder={placebolder}
+          onChange={(e) => getSearchString(e.target.value)}
+        />
       </Box>
     </div>
   );
