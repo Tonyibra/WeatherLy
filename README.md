@@ -29,7 +29,7 @@ Version 1.0.0
    its so simple once you add your API_KEY you can search for any city on planet by default Temp unit is Celcuis but you can change to Fahrenheit by clicking the icon in the appBar
    you can directly go to a specific city : /City/Beirut
    the webapp will also remember the unit you set
-   also you can press on "Weekly" in /City/[cityName] to get the weekly forecast                                                       
-## [DEMO]:https://weather-ly.vercel.app/ 
+   also you can press on "Weekly" in /City/[cityName] to get the weekly forecast                                                                      
+## [DEMO](https://weather-ly.vercel.app/)
 ## License and copyrights
 © Tony ibrahim
