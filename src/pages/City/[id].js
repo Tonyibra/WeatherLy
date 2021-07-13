@@ -45,7 +45,6 @@ const City = ({ city }) => {
 
   React.useEffect(() => {
     setUnit(localStorage.getItem("temp"));
-    console.log(unit);
   }, []);
 
   useEffect(() => {
