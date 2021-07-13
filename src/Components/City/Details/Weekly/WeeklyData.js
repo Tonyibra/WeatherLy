@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./WeeklyData.module.scss";
 const WeeklyData = ({ dailyData, unit }) => {
-  console.log(dailyData);
   const temp = Math.floor(dailyData?.temp?.max);
   const tempLow = Math.floor(dailyData?.temp?.min);
   const unixTime = dailyData?.dt;

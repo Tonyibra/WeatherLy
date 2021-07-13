@@ -47,7 +47,6 @@ const City = ({ city }) => {
   }, [id, coord.lon, coord.lat]);
   React.useEffect(() => {
     setUnit(localStorage.getItem("temp"));
-    console.log(`Unit: ${unit}`);
   }, [unitChanged]);
 
   const cityName = cityData?.name;

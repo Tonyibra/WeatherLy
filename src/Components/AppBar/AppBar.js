@@ -16,7 +16,6 @@ const AppBar = ({ unitChanged, setUnitChanged }) => {
     setUnitChanged(!unitChanged);
   };
 
-  console.log(router.asPath);
   const mainPageHandler = () => {
     router.push("/");
   };

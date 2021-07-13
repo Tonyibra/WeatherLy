@@ -56,8 +56,6 @@ export const searchByCityName = (city, unit) => async (dispatch) => {
 export const weeklyWeather = (lon, lat, unit) => async (dispatch) => {
   try {
     const results = await openWeatherAPI.getWeeklyWeather(lon, lat, unit);
-    console.log(results);
-    console.log(lon, lat);
     dispatch(CityWeeklyDataComplete(results[1]));
   } catch (error) {
     return [error];

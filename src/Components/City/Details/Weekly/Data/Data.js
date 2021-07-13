@@ -5,7 +5,7 @@ const Data = ({ weeklyForecast, unit }) => {
   return (
     <div className={styles.dataList}>
       {weeklyForecast?.map((dailyData, idx) => (
-        <WeeklyData key={dailyData.idx} dailyData={dailyData} unit={unit} />
+        <WeeklyData key={idx} dailyData={dailyData} unit={unit} />
       ))}
     </div>
   );
