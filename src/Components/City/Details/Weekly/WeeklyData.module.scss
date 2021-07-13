@@ -1,0 +1,37 @@
+$primaryFontFamily :  DM Sans, sans-serif;
+$primaryColor : #0e0e0e;
+.weeklyBox{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    max-height: 200px;
+    justify-content: center;
+    height: 100%;
+    max-width: 200px;
+    border-radius: 16px;
+    border: 2px solid #0e0e0e;
+    margin: 16px;
+    padding: 8px;
+    font-family: $primaryFontFamily;
+    color: $primaryColor;
+    .temp{
+            font-size: #0e0e0e;
+            font-size: 22px;
+            line-height: 40px;
+        .lowTemp{
+            font-size: 16px;
+            color: #b3b3b3;
+            line-height: 23px;
+        }
+    }
+    .date{
+        font-size: 18px;
+    }
+    .weatherIco{
+        img{
+            height: 63px;
+            width: 63px;
+            object-fit: contain;
+        }
+    }
+}

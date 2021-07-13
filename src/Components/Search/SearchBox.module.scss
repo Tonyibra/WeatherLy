@@ -6,5 +6,15 @@ $primaryColor:#0e0e0e;
             cursor: pointer;
         }
     }
+.searchBtn{
+    background: transparent;
+    border: none;
+    outline: none;
 
+    &:active{
+        border: none;
+        outline: none;
+    }
+    
+}
 }

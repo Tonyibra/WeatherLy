@@ -2,8 +2,8 @@ import { style } from "@material-ui/system";
 import React from "react";
 import styles from "./Table.module.scss";
 const Table = ({ cityData, tempMax, unit }) => {
-  const windSpeed = cityData.wind?.speed;
-  const humidity = cityData.main?.humidity / 100;
+  const windSpeed = cityData?.wind?.speed;
+  const humidity = cityData?.main?.humidity / 100;
   const Visibility = cityData?.visibility / 1000;
   const sunset = cityData?.sys?.sunset;
   const sunrise = cityData?.sys?.sunrise;

@@ -10,11 +10,11 @@ $primaryColor : #0e0e0e;
     .navContent{
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: space-between;
         width: 100%;
         
         .logo{
-            padding-bottom: 16px;
             span{
                 font-size: 1.875em;
                 color: $primaryColor;
@@ -39,6 +39,15 @@ $primaryColor : #0e0e0e;
             }
             
             
+        }
+    }
+}
+$mobileScreen:600px;
+@media(max-width:$mobileScreen){
+    .navContainer{
+        .navContent{
+            display: flex;
+        flex-direction: column;
         }
     }
 }

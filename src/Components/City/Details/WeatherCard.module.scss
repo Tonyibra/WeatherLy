@@ -38,3 +38,28 @@ $primaryColor : #0e0e0e;
         }
     }
 }
+$tabletNmobile:968px;
+@media(max-width:$tabletNmobile){
+    .weatherCard{
+        width: 95%;
+        max-width: 540px;
+    
+    .cardHeader{
+        span{
+            font-size: 20px;
+        }
+    }
+    .temp{
+        span{
+            font-size: 34px;
+            line-height: 34px;
+        }
+        padding-bottom: 4px;
+
+        .reelFeel{
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
+}
