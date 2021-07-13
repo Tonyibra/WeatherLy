@@ -72,8 +72,8 @@ const Table = ({ cityData, tempMax, unit }) => {
           <span>Temp Max</span>
           <span>
             {unit !== "fahrenheit"
-              ? `${tempMax} C`
-              : `${convertToFeh(tempMax)} F`}
+              ? `${tempMax}°C`
+              : `${convertToFeh(tempMax)}°F`}
           </span>
         </div>
         <div className={styles.row}>
