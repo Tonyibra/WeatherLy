@@ -10,7 +10,7 @@ Version 1.0.0
 
 ## Material Used
 
-0- OpenWeathermap API to fetch weather data currently and daily forecast
+0-OpenWeathermap API to fetch weather data currently and daily forecast
 
 1-Material UI 
    Used material ui to import and use different components to create a user interface in my Next application. This saves a significant amount of time since the i     do not need to write everything from scratch.
@@ -23,5 +23,13 @@ Version 1.0.0
  
 4- Axios
     Used to fetch data 
+    
+    
+## How to Use the WebAPP? 
+   its so simple once you add your API_KEY you can search for any city on planet by default Temp unit is Celcuis but you can change to Fahrenheit by clicking the icon in the appBar
+   you can directly go to a specific city : /City/Beirut
+   the webapp will also remember the unit you set
+   also you can press on "Weekly" in /City/[cityName] to get the weekly forecast 
+   
 ## License and copyrights
 © Tony ibrahim
