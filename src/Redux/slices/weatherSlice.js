@@ -3,6 +3,7 @@ import openWeatherAPI from "../Services/openWeatherAPI";
 
 const initialState = {
   Data: [],
+  weekly: [],
 };
 
 export const weatherSlice = createSlice({
@@ -17,14 +18,32 @@ export const weatherSlice = createSlice({
       state.searchActive = true;
       state.Data = action.payload;
     },
+    CityWeeklyDataComplete: (state, action) => {
+      state.loading = false;
+      state.loaded = true;
+      state.loadingError = false;
+      state.searchActive = true;
+      state.weekly = action.payload;
+    },
   },
 });
-export const { weather, CityDataComplete } = weatherSlice.actions;
+export const { weather, CityDataComplete, CityWeeklyDataComplete } =
+  weatherSlice.actions;
 
 export const searchByCityName = (city, unit) => async (dispatch) => {
   try {
     const results = await openWeatherAPI.getCountrybyCountryName(city, unit);
     dispatch(CityDataComplete(results[1]));
+  } catch (error) {
+    return [error];
+  }
+};
+export const weeklyWeather = (lon, lat, unit) => async (dispatch) => {
+  try {
+    const results = await openWeatherAPI.getWeeklyWeather(lon, lat, unit);
+    console.log(results);
+    console.log(lon, lat);
+    dispatch(CityWeeklyDataComplete(results[1]));
   } catch (error) {
     return [error];
   }

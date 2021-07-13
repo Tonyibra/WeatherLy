@@ -59,6 +59,6 @@ const SearchBox = ({ placebolder }) => {
 };
 
 SearchBox.defaultProps = {
-  placebolder: "Search Location",
+  placebolder: "Search a city",
 };
 export default SearchBox;

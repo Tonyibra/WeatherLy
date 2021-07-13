@@ -2,17 +2,11 @@ import React from "react";
 import styles from "./WeatherCard.module.scss";
 import moment from "moment";
 import Table from "../Table/Table";
-const WeatherCard = ({ cityData, unitChanged }) => {
-  const [unit, setUnit] = React.useState("celsius");
+const WeatherCard = ({ cityData, unitChanged, unit, setUnit }) => {
   const date = moment().format("LT");
-  const getTemp = Math.floor(cityData.main?.temp);
-  const tempMax = Math.floor(cityData.main?.temp_max);
-  const realFeel = Math.floor(cityData.main?.feels_like);
-
-  React.useEffect(() => {
-    setUnit(localStorage.getItem("temp"));
-    console.log(`Unit: ${unit}`);
-  }, [unitChanged]);
+  const getTemp = Math.floor(cityData?.main?.temp);
+  const tempMax = Math.floor(cityData?.main?.temp_max);
+  const realFeel = Math.floor(cityData?.main?.feels_like);
 
   const convertToFeh = (getTemp) => {
     const cToFahr = (getTemp * 9) / 5 + 32;
@@ -39,7 +33,11 @@ const WeatherCard = ({ cityData, unitChanged }) => {
             : units.format(getTemp)}
         </span>
 
-        <span className={styles.reelFeel}>{`RealFeel®:${realFeel}`}</span>
+        <span className={styles.reelFeel}>{`RealFeel®: ${
+          unit !== "fahrenheit"
+            ? units.format(realFeel)
+            : units.format(convertToFeh(realFeel))
+        }`}</span>
       </div>
       <Table cityData={cityData} tempMax={tempMax} unit={unit} />
     </div>

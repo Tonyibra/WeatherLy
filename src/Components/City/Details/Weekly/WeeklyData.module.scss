@@ -1,0 +1,24 @@
+.weeklyBox{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    min-height: 180px;
+    min-width: 200px;
+    border-radius: 16px;
+    border: 2px solid #0e0e0e;
+    margin: 16px;
+    padding: 8px;
+    .temp{
+            font-size: #0e0e0e;
+            font-size: 22px;
+            line-height: 40px;
+        .lowTemp{
+            font-size: 16px;
+            color: #b3b3b3;
+            line-height: 23px;
+        }
+    }
+    .date{
+        font-size: 16px;
+    }
+}
