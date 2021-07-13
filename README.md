@@ -30,6 +30,6 @@ Version 1.0.0
    you can directly go to a specific city : /City/Beirut
    the webapp will also remember the unit you set
    also you can press on "Weekly" in /City/[cityName] to get the weekly forecast 
-   
+##[DEMO]:https://weather-ly.vercel.app/
 ## License and copyrights
 © Tony ibrahim
