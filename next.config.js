@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    API_KEY: "fe59f54d9745f8b87580dcc5b70f2ed0",
+    API_KEY: process.env.API_KEY,
   },
   webpack(config) {
     config.module.rules.push({
