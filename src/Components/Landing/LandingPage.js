@@ -2,11 +2,6 @@ import React from "react";
 import AppBar from "../AppBar/AppBar";
 import styles from "../Landing/Landing.module.scss";
 const LandingPage = () => {
-  React.useEffect(() => {
-    if (!localStorage.getItem("temp")) {
-      localStorage.setItem("temp", "celsius");
-    }
-  }, []);
   return (
     <div className={styles.landingContainer}>
       {/* Header */}

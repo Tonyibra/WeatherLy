@@ -4,9 +4,6 @@ import React from "react";
 import LandingPage from "../Components/Landing/LandingPage";
 
 export default function Home() {
-  // React.useEffect(() => {
-  //   localStorage.setItem("temp", "celcius");
-  // }, []);
   return (
     <div>
       <Head>
