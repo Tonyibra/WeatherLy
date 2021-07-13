@@ -7,7 +7,6 @@ export default function Home() {
   React.useEffect(() => {
     localStorage.setItem("temp", "Celcius");
   }, []);
-
   return (
     <div>
       <Head>

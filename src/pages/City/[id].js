@@ -37,6 +37,9 @@ const City = ({ city }) => {
     await dispatch(searchByCityName(id));
   };
 
+  React.useEffect(() => {
+    localStorage.setItem("temp", "Celcius");
+  }, []);
   useEffect(() => {
     getData();
   }, [id]);
