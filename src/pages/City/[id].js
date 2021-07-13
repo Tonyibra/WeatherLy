@@ -59,37 +59,33 @@ const City = ({ city }) => {
           <title>{`Weather | ${cityName},${countryName} Weather `}</title>
         </Head>
       )}
-
       <>
-        {loading ? (
-          <LinearProgress color="primary" />
-        ) : (
-          <>
-            <AppBar setUnitChanged={setUnitChanged} unitChanged={unitChanged} />
-            <NavTab
-              setWeekly={setWeekly}
-              weekly={weekly}
-              today={today}
-              setToday={setToday}
-            />
-            {today && (
-              <div className={styles.weatherContainer}>
-                <WeatherCard
-                  unit={unit}
-                  setUnit={setUnit}
-                  cityData={cityData}
-                  unitChanged={unitChanged}
-                />
-              </div>
-            )}
+        {loading && <LinearProgress color="primary" />}
+        <>
+          <AppBar setUnitChanged={setUnitChanged} unitChanged={unitChanged} />
+          <NavTab
+            setWeekly={setWeekly}
+            weekly={weekly}
+            today={today}
+            setToday={setToday}
+          />
+          {today && (
+            <div className={styles.weatherContainer}>
+              <WeatherCard
+                unit={unit}
+                setUnit={setUnit}
+                cityData={cityData}
+                unitChanged={unitChanged}
+              />
+            </div>
+          )}
 
-            {weekly && (
-              <div className={styles.weatherContainer}>
-                <Data weeklyForecast={weeklyForecast} unit={unit} />
-              </div>
-            )}
-          </>
-        )}
+          {weekly && (
+            <div className={styles.weatherContainer}>
+              <Data weeklyForecast={weeklyForecast} unit={unit} />
+            </div>
+          )}
+        </>
       </>
     </div>
   );
