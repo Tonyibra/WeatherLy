@@ -13,6 +13,9 @@ const WeatherCard = ({ cityData, unitChanged, unit, setUnit }) => {
     return cToFahr;
   };
 
+  React.useEffect(() => {
+    setUnit(localStorage.getItem("temp"));
+  }, []);
   const units = new Intl.NumberFormat("en", {
     style: "unit",
     unit: `${unit}`,
