@@ -29,12 +29,14 @@ const WeatherCard = ({ cityData, unitChanged, unit, setUnit }) => {
       <div className={styles.temp}>
         <span>
           {unit === "fahrenheit"
-            ? `${convertToFeh(getTemp)} F`
-            : `${getTemp} C`}
+            ? `${convertToFeh(getTemp)}°F`
+            : `${getTemp}°C`}
         </span>
 
         <span className={styles.reelFeel}>{`RealFeel®: ${
-          unit !== "fahrenheit" ? `${realFeel}C` : `${convertToFeh(realFeel)}F`
+          unit !== "fahrenheit"
+            ? `${realFeel}°C`
+            : `${convertToFeh(realFeel)}°F`
         }`}</span>
       </div>
       <Table cityData={cityData} tempMax={tempMax} unit={unit} />

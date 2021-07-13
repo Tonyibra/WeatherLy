@@ -24,9 +24,12 @@ const WeeklyData = ({ dailyData, unit }) => {
     <div className={styles.weeklyBox}>
       <span className={styles.date}>{date.toString().split("GMT")[0]}</span>
       <span className={styles.temp}>
-        {unit !== "fahrenheit" ? `${temp}C` : `${convertToFeh(temp)}F`}
+        {unit !== "fahrenheit" ? `${temp}°C` : `${convertToFeh(temp)}°F`}
         <span className={styles.lowTemp}>
-          /{unit !== "fahrenheit" ? `${tempLow}c` : `${convertToFeh(tempLow)}f`}
+          /
+          {unit !== "fahrenheit"
+            ? `${tempLow}°c`
+            : `${convertToFeh(tempLow)}°f`}
         </span>
         <div className={styles.weatherIco}>
           <img src={displayOpenWeatherApiIcons(iconId)} alt="" />
