@@ -1,8 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
+import React from "react";
 import LandingPage from "../Components/Landing/LandingPage";
 
 export default function Home() {
+  React.useEffect(() => {
+    localStorage.setItem("temp", "Celcius");
+  }, []);
+
   return (
     <div>
       <Head>
