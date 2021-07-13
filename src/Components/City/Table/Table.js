@@ -9,18 +9,18 @@ const Table = ({ cityData, tempMax, unit }) => {
   const sunrise = cityData?.sys?.sunrise;
 
   const deg = cityData?.wind?.deg;
-  const formatter = new Intl.NumberFormat("en", {
-    style: "unit",
-    unit: "kilometer-per-second",
-  });
-  const HumidityFormatter = new Intl.NumberFormat("en", {
-    style: "unit",
-    unit: "kilometer",
-  });
-  const units = new Intl.NumberFormat("en", {
-    style: "unit",
-    unit: unit,
-  });
+  // const formatter = new Intl.NumberFormat("en", {
+  //   style: "unit",
+  //   unit: "kilometer-per-second",
+  // });
+  // const HumidityFormatter = new Intl.NumberFormat("en", {
+  //   style: "unit",
+  //   unit: "kilometer",
+  // });
+  // const units = new Intl.NumberFormat("en", {
+  //   style: "unit",
+  //   unit: unit,
+  // });
   const percentage = new Intl.NumberFormat("en", {
     style: "percent",
   });
@@ -66,14 +66,14 @@ const Table = ({ cityData, tempMax, unit }) => {
       <div className={styles.col}>
         <div className={styles.row}>
           <span>Wind</span>
-          <span>{`${degToCompass(deg)} ${formatter.format(windSpeed)}`}</span>
+          <span>{`${degToCompass(deg)} ${windSpeed} KM/s `}</span>
         </div>
         <div className={styles.row}>
           <span>Temp Max</span>
           <span>
             {unit !== "fahrenheit"
-              ? units.format(tempMax)
-              : units.format(convertToFeh(tempMax))}
+              ? `${tempMax} C`
+              : `${convertToFeh(tempMax)} F`}
           </span>
         </div>
         <div className={styles.row}>
@@ -82,7 +82,7 @@ const Table = ({ cityData, tempMax, unit }) => {
         </div>
         <div className={styles.row}>
           <span>Visibility</span>
-          <span>{HumidityFormatter.format(Visibility)}</span>
+          <span>{`${Visibility} Km`}</span>
         </div>
         <div className={styles.row}>
           <span>Sunset</span>

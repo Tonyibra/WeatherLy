@@ -13,10 +13,10 @@ const WeatherCard = ({ cityData, unitChanged, unit, setUnit }) => {
     return cToFahr;
   };
 
-  const units = new Intl.NumberFormat("en", {
-    style: "unit",
-    unit: unit,
-  });
+  // const units = new Intl.NumberFormat("en", {
+  //   style: "unit",
+  //   unit: unit,
+  // });
 
   return (
     <div className={styles.weatherCard}>
@@ -29,14 +29,12 @@ const WeatherCard = ({ cityData, unitChanged, unit, setUnit }) => {
       <div className={styles.temp}>
         <span>
           {unit === "fahrenheit"
-            ? units.format(convertToFeh(getTemp))
-            : units.format(getTemp)}
+            ? `${convertToFeh(getTemp)} F`
+            : `${getTemp} C`}
         </span>
 
         <span className={styles.reelFeel}>{`RealFeel®: ${
-          unit !== "fahrenheit"
-            ? units.format(realFeel)
-            : units.format(convertToFeh(realFeel))
+          unit !== "fahrenheit" ? `${realFeel}C` : `${convertToFeh(realFeel)}F`
         }`}</span>
       </div>
       <Table cityData={cityData} tempMax={tempMax} unit={unit} />

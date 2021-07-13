@@ -7,10 +7,10 @@ const WeeklyData = ({ dailyData, unit }) => {
   const date = new Date(unixTime * 1000);
   const description = dailyData?.weather[0].description;
   const iconId = dailyData?.weather[0].icon;
-  const units = new Intl.NumberFormat("en", {
-    style: "unit",
-    unit: `${unit}`,
-  });
+  // const units = new Intl.NumberFormat("en", {
+  //   style: "unit",
+  //   unit: `${unit}`,
+  // });
   const convertToFeh = (temp) => {
     const cToFahr = (temp * 9) / 5 + 32;
     return cToFahr;
@@ -24,14 +24,9 @@ const WeeklyData = ({ dailyData, unit }) => {
     <div className={styles.weeklyBox}>
       <span className={styles.date}>{date.toString().split("GMT")[0]}</span>
       <span className={styles.temp}>
-        {unit !== "fahrenheit"
-          ? units.format(temp)
-          : units.format(convertToFeh(temp))}
+        {unit !== "fahrenheit" ? `${temp}C` : `${convertToFeh(temp)}F`}
         <span className={styles.lowTemp}>
-          /
-          {unit !== "fahrenheit"
-            ? units.format(tempLow)
-            : units.format(convertToFeh(tempLow))}
+          /{unit !== "fahrenheit" ? `${tempLow}c` : `${convertToFeh(tempLow)}f`}
         </span>
         <div className={styles.weatherIco}>
           <img src={displayOpenWeatherApiIcons(iconId)} alt="" />
