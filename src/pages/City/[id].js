@@ -38,7 +38,7 @@ const City = ({ city }) => {
   };
 
   React.useEffect(() => {
-    localStorage.setItem("temp", "Celcius");
+    localStorage.setItem("temp", unit);
   }, []);
   useEffect(() => {
     getData();

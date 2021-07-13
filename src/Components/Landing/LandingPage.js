@@ -3,7 +3,7 @@ import AppBar from "../AppBar/AppBar";
 import styles from "../Landing/Landing.module.scss";
 const LandingPage = () => {
   React.useEffect(() => {
-    localStorage.setItem("temp", "Celcius");
+    localStorage.setItem("temp", "temp");
   }, []);
   return (
     <div className={styles.landingContainer}>
