@@ -69,7 +69,9 @@ const City = ({ city }) => {
         </Head>
       )}
       <>
-        {loading && <LinearProgress color="primary" />}
+        {loading && (
+          <LinearProgress color="primary" className={styles.loader} />
+        )}
         <>
           <AppBar setUnitChanged={setUnitChanged} unitChanged={unitChanged} />
           <NavTab
