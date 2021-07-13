@@ -30,6 +30,12 @@ const City = ({ city }) => {
     lat: cityData?.coord?.lat,
   };
 
+  React.useEffect(() => {
+    if (!localStorage.getItem("temp")) {
+      localStorage.setItem("temp", unit);
+    }
+  }, []);
+
   const getData = async () => {
     if (!id) {
       return null;
@@ -38,8 +44,10 @@ const City = ({ city }) => {
   };
 
   React.useEffect(() => {
-    localStorage.setItem("temp", unit);
+    setUnit(localStorage.getItem("temp"));
+    console.log(unit);
   }, []);
+
   useEffect(() => {
     getData();
   }, [id]);
