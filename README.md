@@ -4,7 +4,7 @@ Version 1.0.0
 
 ## TO GET STARTED
 
-1-Users should Generate their API KEY from "https://home.openweathermap.org/api_keys"
+1-Users should Generate their API KEY from "https://home.openweathermap.org/api_keys"                                                                             
 2-Enter you API_KEY in next.config.js under env
 3-Enjoy
 
