@@ -21,4 +21,11 @@
     .date{
         font-size: 16px;
     }
+    .weatherIco{
+        img{
+            height: 63px;
+            width: 63px;
+            object-fit: contain;
+        }
+    }
 }

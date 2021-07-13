@@ -6,6 +6,8 @@ const WeeklyData = ({ dailyData, unit }) => {
   const tempLow = Math.floor(dailyData?.temp?.min);
   const unixTime = dailyData?.dt;
   const date = new Date(unixTime * 1000);
+  const description = dailyData?.weather[0].description;
+  const iconId = dailyData?.weather[0].icon;
   const units = new Intl.NumberFormat("en", {
     style: "unit",
     unit: `${unit}`,
@@ -13,6 +15,11 @@ const WeeklyData = ({ dailyData, unit }) => {
   const convertToFeh = (temp) => {
     const cToFahr = (temp * 9) / 5 + 32;
     return cToFahr;
+  };
+
+  const displayOpenWeatherApiIcons = (iconId) => {
+    var iconurl = "http://openweathermap.org/img/w/" + iconId + ".png";
+    return iconurl;
   };
   return (
     <div className={styles.weeklyBox}>
@@ -27,7 +34,11 @@ const WeeklyData = ({ dailyData, unit }) => {
             ? units.format(tempLow)
             : units.format(convertToFeh(tempLow))}
         </span>
+        <div className={styles.weatherIco}>
+          <img src={displayOpenWeatherApiIcons(iconId)} alt="" />
+        </div>
       </span>
+      <span>{description}</span>
     </div>
   );
 };
