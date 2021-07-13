@@ -17,6 +17,8 @@ $primaryColor : #0e0e0e;
             font-weight: 700;
         }
     }
+    .flex{
+        display: flex;
     .daily,.weekly{
         span{ 
             
@@ -81,5 +83,41 @@ $primaryColor : #0e0e0e;
                
              }
             }
+    }
+}
+}
+$tabletNmobile : 926px;
+@media (max-width:$tabletNmobile){
+    .navTabContainer{
+       
+        align-items: center;
+        .mainTitle{
+            font-size: 38px;
+            span{
+                font-size: 40px;
+                
+            }
+        }
+        .flex{
+        .daily,.weekly,.activeDaily,.activeWeekly{
+            span{ 
+                font-size: 16px;
+                line-height: 24px;
+                
+            }
+        }
+    }
+       
+    }
+}
+$tabletNmobile : 500px;
+@media (max-width:$tabletNmobile){
+    .navTabContainer{
+        flex-direction: column;
+        .flex{
+            display: flex;
+            align-items: center;
+          
+        }
     }
 }

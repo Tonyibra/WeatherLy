@@ -9,5 +9,15 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background:#EBEBEB ;
+    }
+}
+$tabletNmobile : 926px;
+@media (max-width:$tabletNmobile){
+    .cityPage{
+        padding-top: 60px;
+     .weatherContainer{
+         overflow-y: scroll;
+     }
     }
 }

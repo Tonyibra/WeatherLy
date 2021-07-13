@@ -25,17 +25,34 @@ $primaryColor : #0e0e0e;
     }
 }
 $mobileScreen:918px;
+$xsMobiles:425px;
 @media (max-width:$mobileScreen){
     .landingContainer{
         .landingText{
             span{
-                font-size: 40px;
+                font-size: 35px;
                 line-height: 40px;
                 font-weight: 700;
             }
             .span2{
                 color: #b3b3b3;
                 font-size: 20px;
+                font-weight: 500;
+            }  
+        }
+    }
+}
+@media (max-width:$xsMobiles){
+    .landingContainer{
+        .landingText{
+            span{
+                font-size: 25px;
+                line-height: 30px;
+                font-weight: 700;
+            }
+            .span2{
+                color: #b3b3b3;
+                font-size: 16px;
                 font-weight: 500;
             }  
         }

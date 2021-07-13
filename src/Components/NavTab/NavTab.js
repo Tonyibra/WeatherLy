@@ -14,11 +14,13 @@ const NavTab = ({ weekly, setWeekly, today, setToday }) => {
       <div className={styles.mainTitle}>
         Weather <span>Forecast</span>
       </div>
-      <div className={!today ? styles.daily : styles.activeDaily}>
-        <span onClick={changeToDaily}>Today</span>
-      </div>
-      <div className={!weekly ? styles.weekly : styles.activeWeekly}>
-        <span onClick={changeForecastDuration}>Weekly</span>
+      <div className={styles.flex}>
+        <div className={!today ? styles.daily : styles.activeDaily}>
+          <span onClick={changeToDaily}>Today</span>
+        </div>
+        <div className={!weekly ? styles.weekly : styles.activeWeekly}>
+          <span onClick={changeForecastDuration}>Weekly</span>
+        </div>
       </div>
     </div>
   );

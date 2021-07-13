@@ -1,13 +1,19 @@
+$primaryFontFamily :  DM Sans, sans-serif;
+$primaryColor : #0e0e0e;
 .weeklyBox{
     display: flex;
     flex-direction: column;
     background: #fff;
-    min-height: 180px;
-    min-width: 200px;
+    max-height: 200px;
+    justify-content: center;
+    height: 100%;
+    max-width: 200px;
     border-radius: 16px;
     border: 2px solid #0e0e0e;
     margin: 16px;
     padding: 8px;
+    font-family: $primaryFontFamily;
+    color: $primaryColor;
     .temp{
             font-size: #0e0e0e;
             font-size: 22px;
@@ -19,7 +25,7 @@
         }
     }
     .date{
-        font-size: 16px;
+        font-size: 18px;
     }
     .weatherIco{
         img{
